@@ -1,0 +1,175 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form{
+ margin: 0 auto;
+ margin-top: 50px;
+  width: 600px;
+  background-color: lightgray;
+}
+
+div.form-group:first-child{
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 12px;
+}
+
+div.form-group > label, div.form-group > input{
+  display: block;
+ margin-bottom: 12px;
+}
+
+input{
+  padding: 6px 3px;
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+button{
+  /*centra el boton*/
+  display: block;
+  /*Le dimos un margen automatico para que se centre*/
+  margin: 0 auto;
+  /*Cambia el color del boton*/
+  background-color: var(--color-principal);
+  /*Cambia el color del texto*/
+  color: white;
+  /*Le damos un borde al boton*/
+  border: 1px solid brown;
+  /*Le damos un padding al boton*/
+  padding: 10px 20px;
+  /*Le damos un borde redondeado al boton*/
+  border-radius: 10px;
+  /*Le damos un tamaño de fuente al boton*/
+  font-size: 18px;
+  /*Le damos un tipo de fuente al boton*/
+  cursor: pointer;
+  transition: background-color 3s, color 3s, border 3s;
+}
+button:hover{
+  /*Cambia el color del boton cuando se pasa el mouse por encima*/
+  background-color: brown;
+  /*Cambia el color del texto cuando se pasa el mouse por encima*/
+  color: black;
+  /*Cambia el borde del boton cuando se pasa el mouse por encima*/
+  border: 1px solid brown;
+  transition: background-color 8s, color 8s, border 8s;
+}
+
+input[type="checkbox"]:checked {
+    color: yellow;
+}
+
+
+.envolvente:has(input[type="checkbox"]:checked) {
+  background-color: #d0f0e0;
+  border: 2px solid green;
+}
+
+.form-group{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-group >input{
+  display: inline-block;
+  width: 90%;
+  padding: 6px 3px;
+}
+
+.form-group > label{
+  display: block;
+  margin-bottom: 12px;
+}
+
+input:invalid{
+  border: 2px solid rgb(115, 1, 1);
+  background-color: rgb(234, 97, 97);
+}
+input[type="email"]{
+    border: 2px solid blue;
+    background-color: #75acdf;
+}
+input:focus {
+  border: 2px solid rgb(148, 175, 0);
+  outline: none;
+  background-color: #eef6ff;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+input[type="email"]:only-of-type {
+  border: 2px dashed green;
+  background-color: #eaffea;
+  color: darkgreen;
+}
+div.form-group:first-of-type{
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 12px;
+  color: #d000ff;
+  background-color:rgba(255, 0, 212, 0.171);
+}
+:root {
+  --color-principal: rgb(70, 212, 31);
+}
+
+nav.menu-principal {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+
+nav.menu-principal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+nav.menu-principal li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+
+nav.menu-principal a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+
+nav.menu-principal a:hover {
+  color: darkorange;
+}
+
+nav.menu-principal a::before {
+  content: "🔗"; 
+  font-size: 1em;
+  margin-right: 4px;
+}
+p.info {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 20px auto;
+  width: 90%;
+  color: #333;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+p.info::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color:#000;
+  margin-top: 8px;
+  border-radius: 4px;
+  transition: background-color 0.5s ease;
+}
+/*Quiere que el color del borde y el fondo del formulario cambie cuando se haga click en el check-box*/
