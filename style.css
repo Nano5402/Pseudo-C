@@ -112,7 +112,11 @@ div.form-group:first-of-type{
   background-color:rgba(255, 0, 212, 0.171);
 }
 :root {
-  --color-principal: rgb(70, 212, 31);
+  --color-primario: #2e8b57;
+  --color-fondo: #ffffff;
+  --color-texto: #222222;
+  --color-primario: #2e8b57;
+  --color-secundario: #f0f0f0;
 }
 
 nav.menu-principal {
@@ -148,7 +152,7 @@ nav.menu-principal a:hover {
 }
 
 nav.menu-principal a::before {
-  content: "🔗"; 
+  content: "🧩"; 
   font-size: 1em;
   margin-right: 4px;
 }
@@ -328,7 +332,7 @@ p.info::after {
   right: 10px;
   width: 32px;
   height: 32px;
-  background-color: #ff5c5c;
+  background-color: #ff4d4d;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -337,10 +341,179 @@ p.info::after {
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
+
+  /* Centrado clásico sin flex ni grid */
+  text-align: center;
+  line-height: 32px; /* Igual al alto del botón */
+  padding: 0;
 }
 
 .btn-eliminar:hover {
-  background-color: #d80000;
+  background-color: #cc0000;
   transform: scale(1.1);
 }
+
+.tarjeta {
+  position: relative;
+  width: 250px;
+  height: 150px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+nav.menu-principal {
+  position: fixed;           
+  top: 0;                    
+  left: 0;                   
+  width: 100%;               
+  background-color: #f0f0f0;
+  padding: 10px 0;   
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  padding-top: 60px; /* Ajusta según la altura real de tu barra */
+}
+
+/* Contenedor con posición relativa para referencia */
+.contenedor-cajas {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 50px auto;
+}
+
+/* Estilo base para ambas cajas */
+.caja {
+  position: absolute;
+  width: 200px;
+  height: 120px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 120px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Caja roja en el fondo */
+.caja-roja {
+  background-color: crimson;
+  top: 20px;
+  left: 20px;
+  z-index: 1; /* Aparece debajo */
+}
+
+/* Caja verde encima */
+.caja-verde {
+  background-color: seagreen;
+  top: 40px;
+  left: 40px;
+  z-index: 2; /* Aparece arriba */
+}
+
+.card-centrada {
+  position: absolute;         /* Posicionamiento absoluto */
+  top: 50%;                   /* 50% desde arriba */
+  left: 50%;                  /* 50% desde la izquierda */
+  transform: translate(-50%, -50%); /* Corrección para centrar exactamente */
+  width: 300px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Aplicación en botones */
+button {
+  background-color: var(--color-primario);
+  color: white;
+  border: 2px solid var(--color-primario);
+}
+
+/* Aplicación en títulos */
+h2, h3 {
+  color: var(--color-primario);
+}
+
+/* Aplicación en bordes decorativos */
+.cita-academica {
+  border-left: 6px solid var(--color-primario);
+}
+
+.btn-sombra {
+  background-color: var(--color-primario);
+}
+
+.campo-icono input:focus {
+  border-color: var(--color-primario);
+}
+
+.modo-oscuro {
+  --color-fondo: #121212;
+  --color-texto: #e0e0e0;
+  --color-primario: #00b894;
+  --color-secundario: #1e1e1e;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: Arial, sans-serif;
+}
+
+nav.menu-principal {
+  background-color: var(--color-primario);
+}
+
+button {
+  background-color: var(--color-primario);
+  color: var(--color-texto);
+  border: 1px solid var(--color-texto);
+}
+
+.card-centrada {
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  border: 2px solid var(--color-primario);
+  --color-fondo: #fefefe;
+  --color-borde: #2e8b57;
+  --color-texto: #333;
+
+  background-color: var(--color-fondo);
+  border: 2px solid var(--color-borde);
+  color: var(--color-texto);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+button {
+  background-color: var(--color-primario, #007bff); 
+  color: white;
+  border: 2px solid var(--color-primario, #007bff);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
 /*Quiere que el color del borde y el fondo del formulario cambie cuando se haga click en el check-box*/
